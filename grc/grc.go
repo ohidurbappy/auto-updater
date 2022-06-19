@@ -1,4 +1,4 @@
-package updater
+package grc 
 
 import (
 	"encoding/json"
