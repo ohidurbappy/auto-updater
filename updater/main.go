@@ -52,7 +52,7 @@ func (c *Update) Execute() {
 	}
 
 	if !found {
-		fmt.Printf("Your %s is up-to-date. \\o/\n", AppInfo.Name)
+		fmt.Printf("Your %s is up-to-date.\n", AppInfo.Name)
 
 		return
 	}
@@ -137,6 +137,8 @@ func (c *Update) downloadBinary(uri string) error {
 	if err != nil {
 		return DownloadError{Message: err.Error()}
 	}
+
+	file.Close()
 
 	// finally remove the temp file
 	err = os.Remove(file.Name())
